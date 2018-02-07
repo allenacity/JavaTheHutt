@@ -27,7 +27,7 @@ import java.text.NumberFormat;
 public class MainActivity extends AppCompatActivity {
 
     int quantity = 0;
-    String test = "poomp";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,9 +40,29 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        int price = quantity * 5;
-        String priceMessage = "Total: $" + price + "\nThank you!";
+        int price = calculatePrice();
+        String priceMessage = createOrderSummary();
         displayMessage(priceMessage);
+    }
+
+    /**
+     * Calculates the price of the order.
+     */
+    private int calculatePrice() {
+        int price = quantity * 5;
+        return price;
+    }
+
+    /**
+     * Creates a summary of the order.
+     *
+     * @return text summary
+     */
+    private String createOrderSummary(){
+        int total = calculatePrice();
+        String orderSummary = "Name: Dustin Allen \nQuantity: " + quantity + "\nTotal: $" + total + "\nThank you!";
+        return orderSummary;
+
     }
 
     /**
