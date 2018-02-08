@@ -27,8 +27,7 @@ import java.text.NumberFormat;
 public class MainActivity extends AppCompatActivity {
 
     int quantity = 0;
-    String test = "github works";
-    This is another test
+
 
 
     @Override
